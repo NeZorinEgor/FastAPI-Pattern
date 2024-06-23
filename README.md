@@ -53,15 +53,20 @@ server {
    ```
 
 ### Запуск
+
 1. ```
    git clone https://github.com/NeZorinEgor/FastAPI-Pattern.git
    ```
+   
 2. ```
    cd  FastAPI-Pattern
    ```
+   
 3. ```
    cp .env.example .env
    ```
+   
 4. ```
    docker-compose up --build
    ```
+   
