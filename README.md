@@ -42,9 +42,26 @@ server {
         }
 }
 ```
+### Управления миграциями
+Создание ревизии миграции:
+1. ```
+   alembic revision --autogenerate -m "<migration message>"
+   ```
+Переход на последнюю версию:
+2. ```python
+   alembic upgrade head
+   ```
 
 ### Запуск
-1. ```git clone https://github.com/NeZorinEgor/FastAPI-Pattern.git```
-2. ```cd  FastAPI-Sample```
-3. ```cp .env.example .env```
-4. ```docker-compose up --build```
+1. ```
+   git clone https://github.com/NeZorinEgor/FastAPI-Pattern.git
+   ```
+2. ```
+   cd  FastAPI-Pattern
+   ```
+3. ```
+   cp .env.example .env
+   ```
+4. ```
+   docker-compose up --build
+   ```
