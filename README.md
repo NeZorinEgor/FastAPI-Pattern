@@ -42,12 +42,11 @@ server {
         }
 }
 ```
-### Управления миграциями
-Создание ревизии миграции:
+### Ревизии миграции:
 1. ```
    alembic revision --autogenerate -m "<migration message>"
    ```
-Переход на последнюю версию:
+   
 2. ```python
    alembic upgrade head
    ```
