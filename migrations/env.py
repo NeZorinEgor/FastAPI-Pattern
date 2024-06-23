@@ -14,6 +14,7 @@ config.set_section_option(section, "DB_URL", settings.mysql_url)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
+# App models
 from src.database import Base
 
 target_metadata = Base.metadata

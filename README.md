@@ -9,9 +9,28 @@
 1. подключения синхронного / асинхронного движка `MySQL`
 2. подключения `Alembic` миграций
 3. подключение прокси `Nginx`
-4. подключение кеша `Redis`
+4. подключение кэша `Redis`
 5. установку 'портабельных' зависимостей через `Dockerfile` / `docker-compose.yaml`
 
+### [Зависимость для работы с базой данных](src/database.py)
+```python
+# sample: session: AsyncSession = Depends(get_session)
+async def get_session() -> AsyncSession:
+    async with session_factory() as session:
+        yield session
+```
+
+### [Установка моделей для миграций](migrations/env.py)
+```python
+from src.database import Base
+# Your models here ↓
+from src.<your_service_name>.model imaport SomeModel
+
+target_metadata = Base.metadata
+```
+
 ### Запуск
-1. ```cp .env.example .env```
-2. ```docker-compose up --build```
+1. ```git clone https://github.com/NeZorinEgor/FastAPI-Sample.git```
+2. ```cd  FastAPI-Sample```
+3. ```cp .env.example .env```
+4. ```docker-compose up --build```
