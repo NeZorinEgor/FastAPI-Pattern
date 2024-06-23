@@ -16,6 +16,8 @@ if config.config_file_name is not None:
 
 # App models
 from src.database import Base
+# Your models here ↓
+# ...
 
 target_metadata = Base.metadata
 

@@ -29,8 +29,22 @@ from src.<your_service_name>.model imaport SomeModel
 target_metadata = Base.metadata
 ```
 
+### [Проксирование fastapi контейнера](nginx/conf.d/default.conf)
+```
+upstream backend {
+    server fastapi:5000;
+}
+
+server {
+    listen 80;
+    location / {
+        proxy_pass http://backend;
+        }
+}
+```
+
 ### Запуск
-1. ```git clone https://github.com/NeZorinEgor/FastAPI-Sample.git```
+1. ```git clone https://github.com/NeZorinEgor/FastAPI-Pattern.git```
 2. ```cd  FastAPI-Sample```
 3. ```cp .env.example .env```
 4. ```docker-compose up --build```

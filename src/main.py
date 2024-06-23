@@ -29,7 +29,6 @@ async def lifespan(app: FastAPI):
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")
     yield
     # Shutdown
-    print("shutdown")
     await redis.close()
 
 
