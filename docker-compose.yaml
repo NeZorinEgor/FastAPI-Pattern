@@ -23,7 +23,7 @@ services:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
       interval: 10s
       timeout: 10s
-      retries: 3
+      retries: 4
     networks:
       - app-network
 
