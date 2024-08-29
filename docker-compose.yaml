@@ -21,8 +21,8 @@ services:
       - .env
     healthcheck:
       test: [ "CMD", "mysqladmin", "ping", "-h", "localhost" ]
-      interval: 10s
-      timeout: 10s
+      interval: 15s
+      timeout: 15s
       retries: 4
     networks:
       - app-network

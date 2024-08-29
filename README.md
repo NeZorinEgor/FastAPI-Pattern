@@ -20,7 +20,7 @@ async def get_session() -> AsyncSession:
         yield session
 ```
 
-### [Установка моделей для миграций](migrations/env.py)
+### [Установка моделей для миграций](alembic/env.py)
 ```python
 from src.database import Base
 # Your models here ↓
@@ -62,10 +62,6 @@ server {
    ```
    
 3. ```
-   cp .env.example .env
-   ```
-   
-4. ```
    docker-compose up --build
    ```
    
