@@ -8,7 +8,6 @@ from fastapi_cache import FastAPICache
 from fastapi_cache.backends.redis import RedisBackend
 from fastapi_cache.decorator import cache
 from redis import asyncio as aioredis
-from redis import Redis
 
 # Local modules
 from src.config import settings
@@ -17,13 +16,9 @@ from src.config import settings
 import time
 
 
-redis: Redis | None
-
-
 # Event-Manager
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    global redis
     # Startup
     redis = aioredis.from_url(settings.redis_url)
     FastAPICache.init(RedisBackend(redis), prefix="fastapi-cache")

@@ -30,7 +30,7 @@ target_metadata = Base.metadata
 ```
 
 ### [Проксирование fastapi контейнера](nginx/conf.d/default.conf)
-```
+```bash
 upstream backend {
     server fastapi:5000;
 }

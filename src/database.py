@@ -16,8 +16,8 @@ session_factory = async_sessionmaker(
 )
 
 
-# global database connector dependency
-# sample: session: AsyncSession = Depends(get_session)
+# Global database connector dependency
+# Sample: session: AsyncSession = Depends(get_session)
 async def get_session() -> AsyncSession:
     async with session_factory() as session:
         yield session
