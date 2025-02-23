@@ -46,7 +46,7 @@ class Settings(BaseSettings):
     def redis_url(self) -> str:
         return f"redis://{self.REDIS_HOST}:{self.REDIS_PORT}"
 
-    model_config = SettingsConfigDict(env_file=".env.example")
+    model_config = SettingsConfigDict(env_file=".env")
 
 
 settings = Settings() # noqa

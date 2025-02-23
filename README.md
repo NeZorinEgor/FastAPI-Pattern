@@ -65,8 +65,9 @@ app = FastAPI(lifespan=lifespan)
 async def index():
     return dict(hello="world")
 ```
-5. Start up application:
+5. Local dev start up:
 ```bash
 docker compose up
+alembic upgrade head; uvicorn src.main:app --reload --host 0.0.0.0 --port 8000
 ```
 

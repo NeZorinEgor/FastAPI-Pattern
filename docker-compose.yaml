@@ -39,23 +39,20 @@ services:
       - localstack-data:/var/lib/localstack
     env_file:
       - .env
+
+#  backend:
+#    container_name: backend
+#    env_file:
+#      - .env
+#    ports:
+#      - ${APP_PORT}:${APP_PORT}
+#    command: bash -c "alembic upgrade head && uvicorn src.main:app --host ${APP_HOST} --port ${APP_PORT}"
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
 #    depends_on:
 #      postgres:
 #        condition: service_healthy
-
-  backend:
-    container_name: backend
-    env_file:
-      - .env
-    ports:
-      - ${APP_PORT}:${APP_PORT}
-    command: bash -c "alembic upgrade head && uvicorn src.main:app --host ${APP_HOST} --port ${APP_PORT}"
-    build:
-      context: .
-      dockerfile: Dockerfile
-    depends_on:
-      postgres:
-        condition: service_healthy
 
 volumes:
   localstack-data:
